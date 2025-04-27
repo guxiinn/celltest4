@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Fortal</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #D9D6B6;
+            color: #2B4C40;
+            padding: 0;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background-color: #547734;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Botão Hambúrguer */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Estilos principais */
+        main {
+            padding: 2rem;
+        }
+
+        .inicio {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .inicio h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2B4C40;
+        }
+
+        .slogan {
+            font-size: 1.2rem;
+            color: #2B4C40;
+            margin-bottom: 2rem;
+        }
+
+        .imagem-principal {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 20px;
+            margin-top: 1rem;
+        }
+
+        /* Quem Somos */
+        .quem-somos {
+            margin-top: 2rem;
+        }
+
+        .quem-somos h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2B4C40;
+        }
+
+        .quem-somos p {
+            font-size: 1.1rem;
+            color: #2B4C40;
+        }
+
+        /* Menu Responsivo */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background-color: #547734;
+                position: absolute;
+                top: 70px;
+                right: 10px;
+                padding: 1rem;
+                border-radius: 10px;
+                z-index: 10;
+            }
+
+            .menu.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Eco-Fortal</div>
+
+        <nav id="menu" class="menu">
+            <a href="#inicio">Início</a>
+            <a href="#quem-somos">Quem Somos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <button class="menu-toggle" id="menu-toggle">
+            ☰
+        </button>
+    </header>
+
+    <main>
+        <section id="inicio" class="inicio">
+            <h1>Bem-vindo à Eco-Fortal</h1>
+            <p class="slogan">“Sinalizamos o descaso, promovemos a mudança”</p>
+            <img src="sua-imagem.jpg" alt="Imagem de uma árvore" class="imagem-principal">
+        </section>
+
+        <section id="quem-somos" class="quem-somos">
+            <h2>Quem Somos?</h2>
+            <p>Somos uma organização dedicada à promoção da melhoria contínua e à preservação dos ambientes públicos...</p>
+        </section>
+    </main>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
